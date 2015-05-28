@@ -1,0 +1,18 @@
+<section class="two">
+    <div class="container">
+        <header>
+            <h2>Stream: {{ruleset}}</h2>
+        </header>
+        <table class="rules">
+            <thead>
+                <tr><th>Tag</th><th>Value</th><th></th></tr>
+                <tr><th><input type="text" name="tag"></th><th><input type="text" name="val"></th><th><a class="add-rule" href="#"><span class="icon fa-plus"></span></a></th></tr>
+            </thead>
+            <tbody>
+                {% for rule in rules %}
+                <tr><td class="tag">{{rule.tag}}</td><td class="val">{{rule.value}}</td><td class="val"><a class="delete-rule" href="#"><span class="icon fa-trash"></span></a></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>

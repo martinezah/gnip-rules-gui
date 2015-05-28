@@ -44,7 +44,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -88,3 +88,10 @@ USE_TZ = True
 STATIC_URL =  os.environ.get('STATIC_URL', '/static/')
 
 TEMPLATE_DIRS = os.environ.get('TEMPLATE_DIRS', '').split(',')
+
+GNIP = {
+    'streams': os.environ.get('GNIP_STREAMS', '').split(','),
+    'username': os.environ.get('GNIP_USERNAME', ''),
+    'password': os.environ.get('GNIP_PASSWORD', ''),
+    'api': os.environ.get('GNIP_API', ''),
+}
