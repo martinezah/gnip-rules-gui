@@ -3,10 +3,15 @@
         <header>
             <h2>Stream: {{ruleset}}</h2>
         </header>
+        <section class="box search">
+            <form id="search" method="post" action="#">
+                <input type="text" class="text" name="search" placeholder="Search">
+            </form>
+        </section>
         <table class="rules">
             <thead>
                 <tr><th>Tag</th><th>Value</th><th></th></tr>
-                <tr><th><input type="text" name="tag"></th><th><input type="text" name="val"></th><th><a class="add-rule" href="#"><span class="icon fa-plus"></span></a></th></tr>
+                <tr><th><input type="text" name="tag" placeholder=""></th><th><input type="text" name="val" placeholder=""></th><th><a class="add-rule" href="#"><span class="icon fa-plus"></span></a></th></tr>
             </thead>
             <tbody>
                 {% for rule in rules %}

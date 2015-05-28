@@ -147,11 +147,32 @@
                 });
             };
 
+            app.filterRules = function(filter) {
+                if (filter.length) {
+                    $("tbody tr").each(function() {
+                        var txt = $(this).text();
+                        if (txt.indexOf(filter) > -1) {
+                            $(this).show();
+                        } else {
+                            $(this).hide();
+                        }
+                    });
+                } else {
+                    $("tbody tr").show();
+                }
+            };
+
             //handlers
             $("#header").on("click", ".rulesets a", function() {
                 app.ruleset = $(this).attr("data-ruleset");
                 $("#main").empty();
                 app.loadRuleset();
+            });
+
+            $("body").on("submit", "#search", function() {
+                var filter = $("input[name='search']").val();
+                app.filterRules(filter);
+                return false;
             });
 
             $("body").on("click", "a.add-rule", function() {
