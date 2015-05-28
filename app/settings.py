@@ -61,11 +61,11 @@ WSGI_APPLICATION = 'app.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':   os.environ.get('DB_DEFAULT_ENGINE', 'django.db.backends.mysql'),
-        'NAME':     os.environ.get('DB_DEFAULT_NAME', 'memex_dashboard'),
-        'USER':     os.environ.get('DB_DEFAULT_USER', 'memex'),
+        'NAME':     os.environ.get('DB_DEFAULT_NAME', 'gnip-rules-gui'),
+        'HOST':     os.environ.get('DB_DEFAULT_HOST', 'localhost'),
+        'PORT':     os.environ.get('DB_DEFAULT_PORT', '3306'),
+        'USER':     os.environ.get('DB_DEFAULT_USER', ''),
         'PASSWORD': os.environ.get('DB_DEFAULT_PASSWORD', ''),
-        'HOST':     os.environ.get('DB_DEFAULT_HOST', ''),
-        'PORT':     os.environ.get('DB_DEFAULT_PORT', ''),
     }
 }
 
